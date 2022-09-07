@@ -1,51 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive card details form</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-  000
+    <title>Frontend Mentor | Interactive card details form</title>
 
-  Cardholder Name
-  e.g. Jane Appleseed
 
-  Card Number
-  e.g. 1234 5678 9123 0000
+  </head>
 
-  Exp. Date (MM/YY)
-  MM
-  YY
+  <body>
 
-  CVC
-  e.g. 123
+    <main>
+      <div id="card" class="card-container">
 
-  Confirm
+        <div class="card-back">
+          <img src="images/bg-card-back.png" alt="">
+        </div>
 
-  <!-- Completed state start -->
+        <div class="card-front-container">
+          <div class="card-logo">
+            <img src="images/card-logo.svg" alt="">
+          </div>
+          <div class="card-front">
+            <div class="card-info">
+              <p id="card-cvc">000</p>
+              <p class="card-num" id="card-num">0000 0000 0000 0000</p>
+              <div class="card-details">
+                <p id="card-holder">Jane Appleseed</p>
+                <div class="card-expiration">
+                  <p id="card-month-expiration">00</p>
+                  <span class="expiration-divider">/</span>
+                  <p id="card-year-expiration">00</p>
+                </div>
+              </div>
+            </div>
+            <img src="images/bg-card-front.png" alt="">
+          </div>
+        </div>
+      </div>
 
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+
+      <form onsubmit="displayConfirm(); return false;" class="card-info-form">
+        <label for="card-name">Cardholder Name</label>
+        <input type="text" name="card-name" id="card-name" placeholder="e.g. Jane Appleseed">
+
+        <label for="card-number">Card Number</label>
+        <input type="text" name="card-number" id="card-num-input" placeholder="e.g. 1234 5678 9123 0000">
+
+        <div class="date-and-cvc">
+          <div class="date-container">
+            <label for="exp-date">Exp. Date (MM/YY)</label>
+            <div>
+              <input type="text" name="exp-date" id="month-expiration-input" class="exp-date" placeholder="MM">
+              <input type="text" name="exp-date" id="year-expiration-input" class="exp-date" placeholder="YY">
+            </div>
+          </div>
+
+          <div class="cvc-container">
+            <label for="cvc">CVC</label>
+            <input type="text" name="cvc" id="card-cvc-input" placeholder="eg. 123">
+          </div>
+        </div>
+
+        <input type="submit" class="cta" id="submit" value="Confirm">
+      </form>
+
+      <!-- Completed state start -->
+
+      <div id="confirmation" class="active" style="display:none">
+        <img src="images/icon-complete.svg" alt="">
+        <h3>Thank you!</h3>
+        <p>We've added your card details</p>
+        <button id="continue-btn" class="cta" onclick="showForm()">Continue</button>
+      </div>
+    </main>
+
+
+
+    <!-- <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+    <script src="script.js"></script>
+  </body>
+
 </html>
