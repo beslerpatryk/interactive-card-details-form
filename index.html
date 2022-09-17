@@ -21,59 +21,47 @@
   <body>
 
     <main>
-      <div id="card" class="card-container">
 
-        <div class="card-back">
-          <img src="images/bg-card-back.png" alt="">
+      <div class="card-preview-container">
+
+        <div class="back-preview">
+          <p class="cvc-preview">000</p>
         </div>
 
-        <div class="card-front-container">
-          <div class="card-logo">
-            <img src="images/card-logo.svg" alt="">
-          </div>
-          <div class="card-front">
-            <div class="card-info">
-              <p id="card-cvc">000</p>
-              <p class="card-num" id="card-num">0000 0000 0000 0000</p>
-              <div class="card-details">
-                <p id="card-holder">Jane Appleseed</p>
-                <div class="card-expiration">
-                  <p id="card-month-expiration">00</p>
-                  <span class="expiration-divider">/</span>
-                  <p id="card-year-expiration">00</p>
-                </div>
+        <div class="front-preview">
+            <img src="images/card-logo.svg" class="logo-preview" alt="Logo of a bank card.">
+            <p class="number-preview">0000 0000 0000 0000</p>
+            <p class="name-preview">Jane Appleseed</p>
+            <p class="expiration-preview">00/00</p>
+        </div>
+
+      </div>
+      
+      <div class="form-container">
+        <form onsubmit="displayConfirm(); return false;" class="card-info-form">
+          <label for="card-name">Cardholder Name</label>
+          <input type="text" name="card-name" id="card-name" placeholder="e.g. Jane Appleseed">
+  
+          <label for="card-number">Card Number</label>
+          <input type="text" name="card-number" id="card-num-input" placeholder="e.g. 1234 5678 9123 0000">
+  
+          <div class="date-and-cvc">
+            <div class="date-container">
+              <label for="exp-date">Exp. Date (MM/YY)</label>
+              <div>
+                <input type="text" name="exp-date" id="month-expiration-input" class="exp-date" placeholder="MM">
+                <input type="text" name="exp-date" id="year-expiration-input" class="exp-date" placeholder="YY">
               </div>
             </div>
-            <img src="images/bg-card-front.png" alt="">
-          </div>
-        </div>
-      </div>
-
-
-      <form onsubmit="displayConfirm(); return false;" class="card-info-form">
-        <label for="card-name">Cardholder Name</label>
-        <input type="text" name="card-name" id="card-name" placeholder="e.g. Jane Appleseed">
-
-        <label for="card-number">Card Number</label>
-        <input type="text" name="card-number" id="card-num-input" placeholder="e.g. 1234 5678 9123 0000">
-
-        <div class="date-and-cvc">
-          <div class="date-container">
-            <label for="exp-date">Exp. Date (MM/YY)</label>
-            <div>
-              <input type="text" name="exp-date" id="month-expiration-input" class="exp-date" placeholder="MM">
-              <input type="text" name="exp-date" id="year-expiration-input" class="exp-date" placeholder="YY">
+  
+            <div class="cvc-container">
+              <label for="cvc">CVC</label>
+              <input type="text" name="cvc" id="card-cvc-input" placeholder="eg. 123">
             </div>
           </div>
-
-          <div class="cvc-container">
-            <label for="cvc">CVC</label>
-            <input type="text" name="cvc" id="card-cvc-input" placeholder="eg. 123">
-          </div>
-        </div>
-
-        <input type="submit" class="cta" id="submit" value="Confirm">
-      </form>
+  
+          <input type="submit" class="cta" id="submit" value="Confirm">
+        </form>
 
       <!-- Completed state start -->
 
@@ -83,6 +71,8 @@
         <p>We've added your card details</p>
         <button id="continue-btn" class="cta" onclick="showForm()">Continue</button>
       </div>
+      </div>
+
     </main>
 
 
