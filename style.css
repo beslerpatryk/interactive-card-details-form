@@ -32,19 +32,18 @@ body {
     min-height: 100vh;
     font-size: 18px;
     font-family: 'Space Grotesk', sans-serif;
+        background: var(--light-grayish-violet)
 }
 
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     overflow: hidden;
     gap: 6rem;
     min-width: 100%;
-    /* max-width: 343px; */
     background-color:#fff;
-    padding-bottom: 2rem;
+    min-height: 100vh;
 }
 
 /* Form */
@@ -210,6 +209,10 @@ form{
     font-size: 0.8rem;
 }
 
+.expiration-preview p {
+    display: inline;
+}
+
 /* Modal */
 
 .active{
@@ -242,13 +245,12 @@ form{
 }
 
 @media (min-width:800px){
-
     main {
         padding: 0;
         flex-direction: row;
         justify-content: initial;
         gap: 0;
-
+        min-width: 100%;
     }
 
     /* Card Preview */
@@ -340,6 +342,23 @@ form{
     .cvc-container {
         max-width: 50%;
     }
-    
-        
+}
+
+@media (min-width: 800px) and (max-width: 1300px) {
+
+    .front-preview {
+        left: 5%;
+    }
+
+    .back-preview {
+        left: 5%;
+    }
+
+}
+
+@media (min-width: 1440px) {
+    main {
+        width: 1440px;
+        min-width: auto;
+    }
 }
