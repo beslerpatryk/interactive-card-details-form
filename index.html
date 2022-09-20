@@ -29,51 +29,56 @@
         </div>
 
         <div class="front-preview">
-            <img src="images/card-logo.svg" class="logo-preview" alt="Logo of a bank card.">
-            <p class="number-preview">0000 0000 0000 0000</p>
-            <p class="name-preview">Jane Appleseed</p>
-            <div class="expiration-preview">
-                <p class="month-preview">00/</p>
-                <p class="year-preview">00</p>
-            </div>
+          <img src="images/card-logo.svg" class="logo-preview" alt="Logo of a bank card.">
+          <p class="number-preview">0000 0000 0000 0000</p>
+          <p class="name-preview">Jane Appleseed</p>
+          <div class="expiration-preview">
+            <p class="month-preview">00/</p>
+            <p class="year-preview">00</p>
+          </div>
         </div>
 
       </div>
-
+<!-- onsubmit="displayConfirm(); return false;" -->
       <div class="form-container">
-        <form onsubmit="displayConfirm(); return false;" class="card-info-form">
+        <form action="/" method="GET"  class="card-info-form">
           <label for="card-name">Cardholder Name</label>
-          <input type="text" name="card-name" id="card-name" placeholder="e.g. Jane Appleseed">
-  
+          <input type="text" name="card-name" id="card-name" placeholder="eg. Jane Appleseed" maxlength="30"
+            pattern="^[A-Za-z_\s]{3,30}$" title="eg. Jane Appleseed" required>
+
           <label for="card-number">Card Number</label>
-          <input type="text" name="card-number" id="card-num-input" placeholder="e.g. 1234 5678 9123 0000">
-  
+          <input type="text" name="card-number" id="card-num-input" placeholder="e.g. 1234 5678 9123 0000"
+            maxlength="19" pattern="[0-9_\s]{16,19}" title="eg. 1234 5789 9123 000" required>
+
           <div class="date-and-cvc">
             <div class="date-container">
-              <label for="exp-date">Exp. Date (MM/YY)</label>
+              <label for="exp-date-month">Exp. Date (MM/YY)</label>
               <div>
-                <input type="text" name="exp-date" id="month-expiration-input" class="exp-date" placeholder="MM">
-                <input type="text" name="exp-date" id="year-expiration-input" class="exp-date" placeholder="YY">
+                <input type="text" name="exp-date-month" id="month-expiration-input" class="exp-date" placeholder="MM"
+                  maxlength="2" pattern="[0-9]{2}" title="MM" required>
+                <input type="text" name="exp-date-year" id="year-expiration-input" class="exp-date" placeholder="YY"
+                  maxlength="2" pattern="[0-9]{2}" title="YY" required>
               </div>
             </div>
-  
+
             <div class="cvc-container">
               <label for="cvc">CVC</label>
-              <input type="text" name="cvc" id="card-cvc-input" placeholder="eg. 123">
+              <input type="text" name="cvc" id="card-cvc-input" placeholder="eg. 123" maxlength="3" pattern="[0-9]{3}"
+                title="eg. 123" required>
             </div>
           </div>
-  
+
           <input type="submit" class="cta" id="submit" value="Confirm">
         </form>
 
-      <!-- Completed state start -->
+        <!-- Completed state start -->
 
-      <div id="confirmation" class="active" style="display:none">
-        <img src="images/icon-complete.svg" alt="">
-        <h3>Thank you!</h3>
-        <p>We've added your card details</p>
-        <button id="continue-btn" class="cta" onclick="showForm()">Continue</button>
-      </div>
+        <div id="confirmation" class="active" style="display:none">
+          <img src="images/icon-complete.svg" alt="">
+          <h3>Thank you!</h3>
+          <p>We've added your card details</p>
+          <button id="continue-btn" class="cta" onclick="showForm()">Continue</button>
+        </div>
       </div>
 
     </main>
