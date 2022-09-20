@@ -32,7 +32,7 @@ body {
     min-height: 100vh;
     font-size: 18px;
     font-family: 'Space Grotesk', sans-serif;
-        background: var(--light-grayish-violet)
+    background: var(--light-grayish-violet)
 }
 
 main {
@@ -47,11 +47,24 @@ main {
 }
 
 /* Form */
+
 label {
     font-family: inherit;
     font-size: 0.75rem;
     text-transform: uppercase;
     color: var(--very-dark-violet);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
 }
 
 input:not(.cta){
@@ -138,6 +151,7 @@ form{
 }
 
 /* Card Preview Panel */
+
 .card-preview-container {
     background-image: url(images/bg-main-mobile.png);
     background-repeat: no-repeat;
@@ -165,7 +179,6 @@ form{
     margin-top: 80px;
     margin-left: 270px;
 }
-
 
 /* Card Front */
 
@@ -293,7 +306,6 @@ form{
         font-size: 0.8rem;
     }
 
-
     /* Card Back */
 
     .back-preview {
@@ -343,6 +355,8 @@ form{
         max-width: 50%;
     }
 }
+
+
 
 @media (min-width: 800px) and (max-width: 1300px) {
 
