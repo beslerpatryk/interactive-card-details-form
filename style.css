@@ -21,6 +21,10 @@
     margin: 0;
 }
 
+a{
+    text-decoration: none;
+}
+
 img {
     vertical-align: top;
 }
@@ -36,11 +40,11 @@ body {
 }
 
 main {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
-    gap: 6rem;
     min-width: 100%;
     background-color:#fff;
     min-height: 100vh;
@@ -89,7 +93,9 @@ input:focus:not(#submit) {
 form{
     max-width: 343px;
     padding: 0 1.1rem;
-    z-index:99999;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    z-index: 999;
     transition: ease-in 0.3s;
 }
 
@@ -257,6 +263,16 @@ form{
     margin-bottom: 1rem;
 }
 
+.attribution {
+    font-size: 0.7rem;
+    padding: 1rem;
+}
+
+.attribution a {
+    color: #a71fc5;
+}
+
+
 @media (min-width:800px){
     main {
         padding: 0;
@@ -354,6 +370,13 @@ form{
     .cvc-container {
         max-width: 50%;
     }
+
+    .attribution {
+        position: absolute;
+        padding: 0;
+        right: 1rem;
+        bottom: 1rem;
+    }
 }
 
 
@@ -367,7 +390,6 @@ form{
     .back-preview {
         left: 5%;
     }
-
 }
 
 @media (min-width: 1440px) {
