@@ -17,14 +17,6 @@ const cvcInput = document.getElementById("card-cvc-input")
 
 let numOfSpaces = 0
 
-form.addEventListener('submit', (e) => {
-    let messages = []
-    if(messages.length > 0){
-        e.preventDefault()
-    }
-    displayConfirm();
-})
-
 submitBtn.addEventListener('mouseDown', ()=> {
     confirmationEl.style = "display: initial"
 })
@@ -38,14 +30,11 @@ cardNumInput.addEventListener('keyup', (e)=>{
         cardNum.innerHTML = "0000 0000 0000 0000"
         numOfSpaces = 0;
     }
-    if (cardNumLength % 4 === 0 && cardNumLength < 15){
+    if (cardNumLength != 0 && cardNumLength % 4 === 0 && cardNumLength < 15){
         cardNumInput.value = cardNumInput.value + " "
         cardNum.innerHTML = cardNum.innerHTML + " "
         numOfSpaces++;
     }
-
-    console.log(cardNumLength)
-
 })
 
 cardholderInput.addEventListener('keyup', (e)=>{
@@ -66,7 +55,6 @@ monthExpirationInput.addEventListener('keyup', (e)=>{
         monthExpiration.innerHTML = 1 + "/"
         monthExpirationInput.value = 1 
     }
-
 })
 
 yearExpirationInput.addEventListener('keyup', (e)=>{
