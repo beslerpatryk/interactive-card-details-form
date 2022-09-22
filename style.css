@@ -59,6 +59,10 @@ label {
     color: var(--very-dark-violet);
 }
 
+input {
+    border: 2px solid;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -89,6 +93,7 @@ input:focus:not(#submit) {
     border-color: transparent;
     border-radius: 0.5rem;
 }
+
 
 form{
     max-width: 343px;
@@ -172,12 +177,14 @@ form{
 .back-preview {
     background-image: url(images/bg-card-back.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     position: absolute;
     width: 345px;
     height: 190px;
     right: 20px;
     top:40px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3);
 }
 
 .cvc-preview {
@@ -191,7 +198,7 @@ form{
 .front-preview {
     background-image: url(images/bg-card-front.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     position: absolute;
     width: 345px;
     height: 190px;
@@ -199,6 +206,8 @@ form{
     bottom: -48px;
     color: #fff;
     z-index: 100;
+    border-radius: 10px;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.3);
 }
 
 .logo-preview {
@@ -285,6 +294,7 @@ form{
     /* Card Preview */
 
     .card-preview-container {
+        background-image: url(images/bg-main-desktop.png);
         min-width: 480px;
         height: 100vh;
     }
@@ -296,6 +306,7 @@ form{
         height: 244px;
         top: 20%;
         left: 30%;
+        background-color: transparent;
     }
 
     .logo-preview {
@@ -303,10 +314,10 @@ form{
     }
 
     .number-preview {
-        margin-top: 60px;
-        margin-bottom: 25px;
+        margin-top: 55px;
+        margin-bottom: 30px;
         margin-left: 34px;
-        font-size: 1.7rem;
+        font-size: 1.6rem;
         letter-spacing: 2px;
     }
 
@@ -349,6 +360,8 @@ form{
 
     form {
         min-width: 380px;
+        padding-top: 0;
+        padding-left: 2rem;
     }
 
     form label{
@@ -393,6 +406,10 @@ form{
 }
 
 @media (min-width: 1440px) {
+    form {
+        margin-left: 4rem;
+    }
+
     main {
         width: 1440px;
         min-width: auto;
