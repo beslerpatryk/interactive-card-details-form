@@ -40,13 +40,13 @@
           <input type="text" name="card-name" id="card-name" placeholder="eg. Jane Appleseed" maxlength="30"
             pattern="^[A-Za-z_\s]{3,30}$" title="eg. Jane Appleseed" required>
           <!-- NUMBER  -->
-          <label for="card-number">Card Number</label>
+          <label for="card-num-input">Card Number</label>
           <input type="text" name="card-number" id="card-num-input" placeholder="e.g. 1234 5678 9123 0000"
             maxlength="19" pattern="[0-9_\s]{16,19}" title="eg. 1234 5789 9123 000" required>
           <!-- DATE&CVC -->
           <div class="date-and-cvc">
             <div class="date-container">
-              <label for="exp-date-month">Exp. Date (MM/YY)</label>
+              <label for="month-expiration-input">Exp. Date (MM/YY)</label>
               <div>
                 <input type="text" name="exp-date-month" id="month-expiration-input" class="exp-date" placeholder="MM"
                   maxlength="2" pattern="[0-9]{2}" title="MM" required>
@@ -55,7 +55,7 @@
               </div>
             </div>
             <div class="cvc-container">
-              <label for="cvc">CVC</label>
+              <label for="card-cvc-input">CVC</label>
               <input type="text" name="cvc" id="card-cvc-input" placeholder="eg. 123" maxlength="3" pattern="[0-9]{3}"
                 title="eg. 123" required>
             </div>
